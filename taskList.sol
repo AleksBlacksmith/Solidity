@@ -76,12 +76,6 @@ contract taskList {
 
     function del(uint8 numKeyTask) public checkOwnerAndAccept {
         delete taskKey[numKeyTask];
-        for (numKeyTask + 1; numKeyTask < key-1; numKeyTask++) {
-            taskKey[numKeyTask - 1] = taskKey[numKeyTask];
-            //return taskKey[numKeyTask];
-        }
-        //key--;
-        //return numKeyTask;
     }
 
     function Done(uint8 numKeyTask) public checkOwnerAndAccept {
