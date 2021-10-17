@@ -55,7 +55,7 @@ contract taskList {
     }
 
     function list() public checkOwnerAndAccept returns (string[]) {
-        for (uint8 i = 0; i < key; i++) {
+        for (uint8 i = 0; i < num; i++) {
             if (!(List.empty())) {
                   List.pop();
             }
@@ -76,6 +76,10 @@ contract taskList {
 
     function del(uint8 numKeyTask) public checkOwnerAndAccept {
         delete taskKey[numKeyTask];
+        for (uint8 i = numKeyTask; i < key; i++) {
+                taskKey[i] = taskKey[i+1];
+        }
+        key = key - 1;
     }
 
     function Done(uint8 numKeyTask) public checkOwnerAndAccept {
