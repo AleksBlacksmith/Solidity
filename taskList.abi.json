@@ -1,0 +1,85 @@
+{
+	"ABI version": 2,
+	"version": "2.1",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "newTask",
+			"inputs": [
+				{"name":"taskTitle","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "list",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"string[]"}
+			]
+		},
+		{
+			"name": "number",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"uint8"}
+			]
+		},
+		{
+			"name": "thisTask",
+			"inputs": [
+				{"name":"numKeyTask","type":"uint8"}
+			],
+			"outputs": [
+				{"components":[{"name":"title","type":"string"},{"name":"time","type":"uint32"},{"name":"done","type":"bool"}],"name":"value0","type":"tuple"}
+			]
+		},
+		{
+			"name": "del",
+			"inputs": [
+				{"name":"numKeyTask","type":"uint8"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "Done",
+			"inputs": [
+				{"name":"numKeyTask","type":"uint8"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "timestamp",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"timestamp","type":"uint32"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"timestamp","type":"uint32"},
+		{"components":[{"name":"title","type":"string"},{"name":"time","type":"uint32"},{"name":"done","type":"bool"}],"name":"taskKey","type":"map(uint8,tuple)"},
+		{"name":"key","type":"uint8"},
+		{"name":"num","type":"uint8"},
+		{"name":"List","type":"string[]"}
+	]
+}
