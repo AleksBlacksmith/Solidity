@@ -1,0 +1,77 @@
+{
+	"ABI version": 2,
+	"version": "2.1",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "createTokenShoes",
+			"inputs": [
+				{"name":"brandName","type":"string"},
+				{"name":"size","type":"uint256"},
+				{"name":"color","type":"string"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "ShoesList",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"string[]"}
+			]
+		},
+		{
+			"name": "infoShoes",
+			"inputs": [
+				{"name":"key","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"BrandName","type":"string"},
+				{"name":"Size","type":"uint256"},
+				{"name":"Color","type":"string"}
+			]
+		},
+		{
+			"name": "sale",
+			"inputs": [
+				{"name":"key","type":"uint256"},
+				{"name":"price","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "saleInfo",
+			"inputs": [
+				{"name":"key","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"BrandName","type":"string"},
+				{"name":"Size","type":"uint256"},
+				{"name":"Color","type":"string"},
+				{"name":"Price","type":"uint256"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"tokenOwner","type":"map(uint256,uint256)"},
+		{"name":"saleKey","type":"uint256"},
+		{"components":[{"name":"brandName","type":"string"},{"name":"shoesSize","type":"uint256"},{"name":"color","type":"string"}],"name":"shoesList","type":"tuple[]"},
+		{"components":[{"name":"brandName","type":"string"},{"name":"shoesSize","type":"uint256"},{"name":"color","type":"string"},{"name":"price","type":"uint256"}],"name":"saleList","type":"tuple[]"}
+	]
+}
