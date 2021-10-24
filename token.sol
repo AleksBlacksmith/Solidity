@@ -39,20 +39,18 @@ contract token {
     tokenShoes[] shoesList;
     shoesSale[] saleList;
 
-    function createTokenShoes(string brandName, uint size, string color) public accept {
+    function createTokenShoes(string brandName, uint size, string color) public accept returns (string) {
         if (!(shoesList.empty())) {
             for (uint i = 0; i <= shoesList.length - 1; i++) {
-                require (shoesList[i].brandName == brandName, 101);
-                // if (shoesList[i].brandName == brandName) {
-                //     //revert(100);
-                //     //break;
-                // }
-                // else {
-                //     shoesList.push(tokenShoes(brandName, size, color));
-                //     uint key = shoesList.length - 1;
-                //     tokenOwner[key] = msg.pubkey();
-                // }
+                // require (shoesList[i].brandName == brandName, 102, "A token with the same name already exists.");
+                if (shoesList[i].brandName == brandName) {
+                    return "A token with the same name already exists.";
+                    break;
+                }
             }
+            shoesList.push(tokenShoes(brandName, size, color));
+            uint key = shoesList.length - 1;
+            tokenOwner[key] = msg.pubkey();
         }
         else {
             shoesList.push(tokenShoes(brandName, size, color));
@@ -89,6 +87,15 @@ contract token {
         Size = saleList[key].shoesSize;
         Color = saleList[key].color;
         Price = saleList[key].price;
+    }
+
+    function ListSale() public accept returns(string[]) {
+        string[] list;
+        for (uint i = 0; i <= saleList.length - 1; i++)
+        {
+            list.push(saleList[i].brandName);
+        }
+        return list;
     }
     
 

@@ -18,6 +18,7 @@
 				{"name":"color","type":"string"}
 			],
 			"outputs": [
+				{"name":"value0","type":"string"}
 			]
 		},
 		{
@@ -58,6 +59,14 @@
 				{"name":"Size","type":"uint256"},
 				{"name":"Color","type":"string"},
 				{"name":"Price","type":"uint256"}
+			]
+		},
+		{
+			"name": "ListSale",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"string[]"}
 			]
 		}
 	],
