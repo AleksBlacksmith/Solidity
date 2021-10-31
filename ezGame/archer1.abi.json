@@ -1,0 +1,82 @@
+{
+	"ABI version": 2,
+	"version": "2.1",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getXP",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getShield",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getPower",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getAttack",
+			"inputs": [
+				{"name":"warUnit","type":"string"}
+			],
+			"outputs": [
+				{"name":"value0","type":"string"}
+			]
+		},
+		{
+			"name": "newUser",
+			"inputs": [
+				{"name":"war","type":"address"},
+				{"name":"arch","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "userInfo",
+			"inputs": [
+				{"name":"user","type":"uint256"}
+			],
+			"outputs": [
+				{"name":"warAddr","type":"address"},
+				{"name":"archAddr","type":"address"},
+				{"name":"warXP","type":"uint256"},
+				{"name":"warShield","type":"uint256"},
+				{"name":"warPower","type":"uint256"},
+				{"name":"archXP","type":"uint256"},
+				{"name":"archShield","type":"uint256"},
+				{"name":"archPower","type":"uint256"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"components":[{"name":"warriorAddress","type":"address"},{"name":"archerAddress","type":"address"},{"name":"warriorXP","type":"uint256"},{"name":"warriorShield","type":"uint256"},{"name":"warriorPower","type":"uint256"},{"name":"archerXP","type":"uint256"},{"name":"archerShield","type":"uint256"},{"name":"archerPower","type":"uint256"}],"name":"userNum","type":"map(uint256,tuple)"},
+		{"name":"userKey","type":"uint256"},
+		{"name":"user","type":"uint256"},
+		{"name":"enemy","type":"uint256"}
+	]
+}
