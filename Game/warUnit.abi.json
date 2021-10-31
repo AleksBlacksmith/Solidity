@@ -1,0 +1,43 @@
+{
+	"ABI version": 2,
+	"version": "2.1",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getAttackUnit",
+			"inputs": [
+				{"name":"baseAddr","type":"address"},
+				{"name":"unitAddr","type":"address"},
+				{"name":"myUnit","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getAttackBase",
+			"inputs": [
+				{"name":"baseAddr","type":"address"},
+				{"name":"myUnit","type":"address"}
+			],
+			"outputs": [
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"components":[{"name":"baseXP","type":"uint256"},{"components":[{"name":"unitXP","type":"uint256"},{"name":"unitPower","type":"uint256"}],"name":"warUnit","type":"map(address,tuple)"}],"name":"baseUnit","type":"map(address,tuple)"}
+	]
+}
