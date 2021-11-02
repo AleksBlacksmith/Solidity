@@ -9,27 +9,40 @@ pragma AbiHeader expire;
 import "warUnit.sol";
 import "baseStation.sol";
 
-contract archer is warrUnit {
+contract archer is baseStation {
 
-    constructor(baseStation newBaseUnit) public {
+    constructor(baseStation newWArcher) public {
         require(tvm.pubkey() != 0, 101);
         require(msg.pubkey() == tvm.pubkey(), 102);
         tvm.accept();
-         
-      
+        
+        // newWarrior;
+    
     }
 
-   
+    uint public archerHP = hitPoint;
+    uint archerShield = shield;
+    uint archerPower = 3;
 
-    uint power = 3;
-    
-    // function getXP(address addr) virtual internal override {
-        // warUnit[addr].unitShield = 5;
+
+    // function getPower() public override returns(uint) {
+    //     uint power = 2;
     // }
 
-    function getPower(address baseAddr) virtual public override {
+    function getShield() public override returns(uint) {
         tvm.accept();
-        baseUnit[baseAddr].warUnit[msg.sender].unitPower = power;
+        return archerShield;
+    }
+
+    function getAttack(uint power) external override {
+        tvm.accept();
+        archerHP = archerHP + archerShield - power; 
+        dead(archerHP);
+    }
+
+    function attack(interfaceGameObject enemyAddr) public {
+        tvm.accept();
+        enemyAddr.getAttack(archerPower);
     }
     
 }

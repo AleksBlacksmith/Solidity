@@ -16,84 +16,42 @@ contract gameObject is interfaceGameObject {
         tvm.accept();
     }
 
-    struct base {
-        uint baseXP;
-        mapping (address => unit) warUnit;
-    }
+    uint public hitPoint = 5;
+    uint public shield = 1;
+    uint public at;
+    uint public unitHP = 5;
 
-    struct unit {
-        uint unitXP;
-        uint unitPower;
-    }
 
-    mapping (address => base) internal baseUnit;
-
-    // mapping (address => unit) internal warUnit;
-
-    modifier accept() {
+    function getShield() virtual public returns(uint) {
         tvm.accept();
-        _;
+        return shield;
     }
 
-    function newBaseUnit(address baseAddr, address unitAddr) virtual public accept {
-        // address addr = msg.sender;
-        // baseUnit[addr];
+    function getPower() virtual public returns(uint) {
+        tvm.accept();
+        return at;
     }
 
-    // function setDeleteBaseUnit(address addr) public accept {
-    //     // проверка
-    //     delete baseUnit[addr];
-    // }
-
-    function getXP(address addr) virtual public accept {
-        baseUnit[msg.sender].warUnit[addr].unitXP = 4;
-    }
-
-    function getPower(address addr) virtual public accept {
-        // baseUnit[msg.sender].warUnit[addr].unitPower = 2;
-    }
-        
-    function checkLiveUnit(address addr) private view accept returns(string) {
-        if (baseUnit[msg.sender].warUnit[addr].unitXP == 0) { 
-            return ("Unit is dead");
-            // i
+    function checkLive(uint hp) private returns(bool) {
+        tvm.accept();
+        if (hp <= 0) {
+            return (false);
         }
         else {
-            return ("Unit is live");
+            return (true);
         }
     }
 
-    function checkLiveBase(address addr) private view accept returns(string) {
-        if (baseUnit[addr].baseXP == 0) { 
+    function dead(uint hp) internal {
+        tvm.accept();
+        bool live = checkLive(hp);
+        if (live == false) {
             msg.sender.transfer(1, true, 160);
-            return ("Base is dead");
-        }
-        else {
-            return ("Base is live");
         }
     }
 
-    function baseInfo(address baseAddr, address warAddr, address archAddr) public accept returns (uint baseXP, uint warriorXP, uint warriorPower, uint archerXP, uint archerPower) {
-        uint baseXP = baseUnit[baseAddr].baseXP;
-        uint warriorXP = baseUnit[baseAddr].warUnit[warAddr].unitXP;
-        uint warriorPower = baseUnit[baseAddr].warUnit[warAddr].unitPower;
-        uint archerXP = baseUnit[baseAddr].warUnit[archAddr].unitXP;
-        uint archerPower = baseUnit[baseAddr].warUnit[archAddr].unitPower;
+    function getAttack(uint power) virtual external override {
+        // address addrEnemy = msg.sender;
+        unitHP = unitHP + getShield() - power;
     }
-
-    // function destroyUnit(address addr) internal accept {
-    //     addr.transfer(1, true, 160);
-    // }
-
-    function getAttackUnit(address baseAddr, address unitAddr, address myUnit) virtual external accept override {
-        // addr = msg.sender;
-        baseUnit[baseAddr].warUnit[unitAddr].unitXP -= baseUnit[msg.sender].warUnit[myUnit].unitPower;
-        // checkLiveUnit(addr);
-    }
-
-    function getAttackBase(address baseAddr, address myUnit) virtual external accept override {
-        baseUnit[baseAddr].baseXP -= baseUnit[msg.sender].warUnit[myUnit].unitPower;
-        // checkLiveBase(addr);
-    }
-
 }

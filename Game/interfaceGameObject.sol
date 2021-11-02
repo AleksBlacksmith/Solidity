@@ -8,7 +8,14 @@ pragma AbiHeader expire;
 
 interface interfaceGameObject {
     
-    function getAttackUnit(address, address, address) external;
-    function getAttackBase(address, address) external;
+    function getAttack(uint) external;
 
 }
+
+// b1 0:92980246309741e403738121bacc64a77c3eb894a5249e19edce97d11fae43bd 
+// w1 0:89111b09d842afb69472c91a8dd6c5b4a541ea2e7c470aa2cf272f4ac8b0d1fc 
+// a1 0:97711b8ab9f467ab305384b4c738e791465ba7f7c308060141e9d42fe5bca3a0 
+
+// b2 0:082c2212726e10d5d5ac1648084092512886d139d0629ec5f85eb8625eb5ffac 
+// w2 0:9b536d6ce22f6537af2dbc360a23c1608042f797a3e1f60383a7b2e88d9c8385 
+// a2 0:5bd5bdf1f101237a7f5eb2784ce1a701b329093960e6d1e09579612222d20448 

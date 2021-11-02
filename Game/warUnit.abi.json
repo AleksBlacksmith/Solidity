@@ -6,27 +6,81 @@
 		{
 			"name": "constructor",
 			"inputs": [
+				{"name":"newWarUnit","type":"address"}
 			],
 			"outputs": [
 			]
 		},
 		{
-			"name": "getAttackUnit",
+			"name": "getAttack",
 			"inputs": [
-				{"name":"baseAddr","type":"address"},
-				{"name":"unitAddr","type":"address"},
-				{"name":"myUnit","type":"address"}
+				{"name":"power","type":"uint256"}
 			],
 			"outputs": [
 			]
 		},
 		{
-			"name": "getAttackBase",
+			"name": "getShield",
 			"inputs": [
-				{"name":"baseAddr","type":"address"},
-				{"name":"myUnit","type":"address"}
 			],
 			"outputs": [
+				{"name":"value0","type":"uint256"}
+			]
+		},
+		{
+			"name": "getPower",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"uint256"}
+			]
+		},
+		{
+			"name": "hitPoint",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"hitPoint","type":"uint256"}
+			]
+		},
+		{
+			"name": "shield",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"shield","type":"uint256"}
+			]
+		},
+		{
+			"name": "at",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"at","type":"uint256"}
+			]
+		},
+		{
+			"name": "unitHP",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"unitHP","type":"uint256"}
+			]
+		},
+		{
+			"name": "baseHP",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"baseHP","type":"uint256"}
+			]
+		},
+		{
+			"name": "baseShield",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"baseShield","type":"uint256"}
 			]
 		}
 	],
@@ -38,6 +92,11 @@
 		{"name":"_pubkey","type":"uint256"},
 		{"name":"_timestamp","type":"uint64"},
 		{"name":"_constructorFlag","type":"bool"},
-		{"components":[{"name":"baseXP","type":"uint256"},{"components":[{"name":"unitXP","type":"uint256"},{"name":"unitPower","type":"uint256"}],"name":"warUnit","type":"map(address,tuple)"}],"name":"baseUnit","type":"map(address,tuple)"}
+		{"name":"hitPoint","type":"uint256"},
+		{"name":"shield","type":"uint256"},
+		{"name":"at","type":"uint256"},
+		{"name":"unitHP","type":"uint256"},
+		{"name":"baseHP","type":"uint256"},
+		{"name":"baseShield","type":"uint256"}
 	]
 }

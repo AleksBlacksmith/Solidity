@@ -11,62 +11,59 @@
 			]
 		},
 		{
-			"name": "newBaseUnit",
+			"name": "getShield",
 			"inputs": [
-				{"name":"baseAddr","type":"address"},
-				{"name":"unitAddr","type":"address"}
 			],
 			"outputs": [
-			]
-		},
-		{
-			"name": "getXP",
-			"inputs": [
-				{"name":"addr","type":"address"}
-			],
-			"outputs": [
+				{"name":"value0","type":"uint256"}
 			]
 		},
 		{
 			"name": "getPower",
 			"inputs": [
-				{"name":"addr","type":"address"}
+			],
+			"outputs": [
+				{"name":"value0","type":"uint256"}
+			]
+		},
+		{
+			"name": "getAttack",
+			"inputs": [
+				{"name":"power","type":"uint256"}
 			],
 			"outputs": [
 			]
 		},
 		{
-			"name": "baseInfo",
+			"name": "hitPoint",
 			"inputs": [
-				{"name":"baseAddr","type":"address"},
-				{"name":"warAddr","type":"address"},
-				{"name":"archAddr","type":"address"}
 			],
 			"outputs": [
-				{"name":"baseXP","type":"uint256"},
-				{"name":"warriorXP","type":"uint256"},
-				{"name":"warriorPower","type":"uint256"},
-				{"name":"archerXP","type":"uint256"},
-				{"name":"archerPower","type":"uint256"}
+				{"name":"hitPoint","type":"uint256"}
 			]
 		},
 		{
-			"name": "getAttackUnit",
+			"name": "shield",
 			"inputs": [
-				{"name":"baseAddr","type":"address"},
-				{"name":"unitAddr","type":"address"},
-				{"name":"myUnit","type":"address"}
 			],
 			"outputs": [
+				{"name":"shield","type":"uint256"}
 			]
 		},
 		{
-			"name": "getAttackBase",
+			"name": "at",
 			"inputs": [
-				{"name":"baseAddr","type":"address"},
-				{"name":"myUnit","type":"address"}
 			],
 			"outputs": [
+				{"name":"at","type":"uint256"}
+			]
+		},
+		{
+			"name": "unitHP",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"unitHP","type":"uint256"}
 			]
 		}
 	],
@@ -78,6 +75,9 @@
 		{"name":"_pubkey","type":"uint256"},
 		{"name":"_timestamp","type":"uint64"},
 		{"name":"_constructorFlag","type":"bool"},
-		{"components":[{"name":"baseXP","type":"uint256"},{"components":[{"name":"unitXP","type":"uint256"},{"name":"unitPower","type":"uint256"}],"name":"warUnit","type":"map(address,tuple)"}],"name":"baseUnit","type":"map(address,tuple)"}
+		{"name":"hitPoint","type":"uint256"},
+		{"name":"shield","type":"uint256"},
+		{"name":"at","type":"uint256"},
+		{"name":"unitHP","type":"uint256"}
 	]
 }

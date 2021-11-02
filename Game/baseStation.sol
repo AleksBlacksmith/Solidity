@@ -16,15 +16,39 @@ contract baseStation is gameObject {
         tvm.accept();
     }
 
-    function newBaseUnit(address baseAddr, address unitAddr) public accept override {
-        baseUnit[baseAddr].warUnit[unitAddr];
+    mapping (address => units) warUnit;
+
+    struct units {
+        uint baseHP;
+        uint warHP;
+        uint archHP;
+        address warrior;
+        address archer;
     }
 
-    // function getXP(address addr) virtual internal override {}
+    // address[] warUnit;
 
-    // function destroyUnit(address addr) virtual internal {}
+    function newWarUnit(address baseAddr) public returns (address) {
+        tvm.accept();
+        warUnit[baseAddr];
+        return baseAddr;
+    }
 
-    // function deleteBaseUnit(address addr) internal accept {
-    //     setDeleteBaseUnit(addr);
-    // }
+    // function actualInfo(address baseAddr, address warAddr, address archAddr)
+
+    function newWarrior(address baseAddr, address unitAddr) public {
+        tvm.accept();
+        warUnit[baseAddr].warrior = unitAddr;
+    }
+
+    function newArcher(address baseAddr, address unitAddr) public {
+        tvm.accept();
+        warUnit[baseAddr].archer = unitAddr;
+    }
+
+    function delWarUnit(address baseAddr, uint hp) internal {
+        tvm.accept();
+        dead(hp);
+        delete warUnit[baseAddr];
+    }
 }
