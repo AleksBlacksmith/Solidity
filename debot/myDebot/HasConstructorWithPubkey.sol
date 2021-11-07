@@ -6,10 +6,8 @@
 pragma ton-solidity >= 0.35.0;
 pragma AbiHeader expire;
 
+abstract contract HasConstructorWithPubkey {
 
-interface intGO {
-
-    function getAttack(uint) external;
-    function attack(address) external;
+    constructor(uint256 pubkey) public {}
     
 }

@@ -8,7 +8,7 @@ pragma AbiHeader expire;
 
 import "warUnit.sol";
 
-contract warrior1 is warUnit {
+contract archer is warUnit {
 
     constructor() public {
         require(tvm.pubkey() != 0, 101);
@@ -16,12 +16,12 @@ contract warrior1 is warUnit {
         tvm.accept();
     }
 
-    uint user = 2;
-    uint enemy = 1;
+    uint user = 1;
+    uint enemy = 2;
 
     function getXP() public override {
         tvm.accept();
-        userNum[user].archerXP = 5;
+        userNum[user].warriorXP = 5;
     }
 
     function getShield() public override {

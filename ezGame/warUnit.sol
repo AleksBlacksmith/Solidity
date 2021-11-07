@@ -8,7 +8,7 @@ pragma AbiHeader expire;
 
 import "intGO.sol";
 
-contract warUnit {
+contract warUnit is intGO {
 
     constructor() public {
         require(tvm.pubkey() != 0, 101);
@@ -16,27 +16,33 @@ contract warUnit {
         tvm.accept();
     }
 
-    struct _user {
+    struct _unit {
         address warriorAddress;
         address archerAddress;
-        uint warriorXP;
+        uint warriorHP;
         uint warriorShield;
         uint warriorPower;
-        uint archerXP;
+        uint archerHP;
         uint archerShield;
         uint archerPower;
     }
 
-    mapping (uint => _user) internal userNum;
+    uint HP = 5;
+    uint Shield = 1;
+    uint Power = 3;
 
-    uint userKey = 0;
+    mapping (address => _unit) internal baseAddress;
 
-    function newUser(address war, address arch) public {
+    function newWarriorUnit(address baseAddr) internal {
         tvm.accept();
-        userKey ++;
-        userNum[userKey].warriorAddress = war;
-        userNum[userKey].archerAddress = arch;
+        baseAddress[baseAddr].warriorAddress = msg.sender;
     }
+
+    function newArcherUnit(address baseAddr) internal {
+        tvm.accept();
+        baseAddress[baseAddr].archerAddress = msg.sender;
+    }
+
 
     function getXP() virtual public {
         tvm.accept();
@@ -50,19 +56,36 @@ contract warUnit {
         tvm.accept();
     }
 
-    function getAttack(string) virtual public returns (string) {
+    function getAttack(uint power) virtual external override {
         tvm.accept();
+        HP = HP + Shield - power;
     }
 
-    function userInfo(uint user) public returns (address warAddr, address archAddr, uint warXP, uint warShield, uint warPower, uint archXP, uint archShield, uint archPower) {
+    function attack(intGO enemyAddress) internal {
         tvm.accept();
-        warAddr = userNum[user].warriorAddress;
-        archAddr = userNum[user].archerAddress;
-        warXP = userNum[user].warriorXP;
-        warShield = userNum[user].warriorShield;
-        warPower = userNum[user].warriorPower;
-        archXP = userNum[user].archerXP;
-        archShield = userNum[user].archerShield;
-        archPower = userNum[user].archerPower;
+        enemyAddress.getAttack(Power);
+    }
+
+    function orderAttack(intGO unitAddress, address enemyAddress) private {
+        tvm.accept();
+        unitAddress.attack(enemyAddress);
+    }
+
+    function baseInfo(address baseAddr) public returns (address warAddr, address archAddr, uint warXP, uint warShield, uint warPower, uint archXP, uint archShield, uint archPower) {
+        tvm.accept();
+        warAddr = baseAddress[baseAddr].warriorAddress;
+        archAddr = baseAddress[baseAddr].archerAddress;
+        warXP = baseAddress[baseAddr].warriorXP;
+        warShield = baseAddress[baseAddr].warriorShield;
+        warPower = baseAddress[baseAddr].warriorPower;
+        archXP = baseAddress[baseAddr].archerXP;
+        archShield = baseAddress[baseAddr].archerShield;
+        archPower = baseAddress[baseAddr].archerPower;
+    }
+
+    function dead(uint hp) internal {
+        if (hp <= 0) {
+            msg.sender.transfer(1, true, 160);
+        }
     }
 }
