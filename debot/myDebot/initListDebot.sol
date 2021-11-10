@@ -19,7 +19,7 @@ import "structs.sol";
 import "HasConstructorWithPubkey.sol";
 
 
-abstract contract initListDebot is Debot, Upgradable, structs { // Upgradable ???
+abstract contract initListDebot is Debot, Upgradable, structs { 
     bytes m_icon;
 
     TvmCell public m_todoCode; // TODO contract code

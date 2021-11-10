@@ -37,8 +37,6 @@ interface IMsig {
 
 contract structs {
 
-    constructor() public {}
-
     mapping (uint => purchase) public purchaseList;
 
 }

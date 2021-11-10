@@ -1,0 +1,17 @@
+Config: default
+Input arguments:
+     tvc: purchaseAssistantDebot.tvc
+      wc: None
+    keys: PADebot.keys.json
+init_data: None
+is_update_tvc: None
+
+Seed phrase: "marble extend tilt false deputy century melody aisle cloud peasant judge jelly"
+Raw address: 0:3ee42f8c3be4507ffe7cc69e95a3a78ecf7518243ee6056687830ae6b5d9a192
+testnet:
+Non-bounceable address (for init): 0QA-5C-MO-RQf_58xp6Vo6eOz3UYJD7mBWaHgwrmtdmhkvSt
+Bounceable address (for later access): kQA-5C-MO-RQf_58xp6Vo6eOz3UYJD7mBWaHgwrmtdmhkqlo
+mainnet:
+Non-bounceable address (for init): UQA-5C-MO-RQf_58xp6Vo6eOz3UYJD7mBWaHgwrmtdmhkk8n
+Bounceable address (for later access): EQA-5C-MO-RQf_58xp6Vo6eOz3UYJD7mBWaHgwrmtdmhkhLi
+Succeeded

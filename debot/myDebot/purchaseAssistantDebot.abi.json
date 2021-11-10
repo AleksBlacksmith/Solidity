@@ -126,7 +126,8 @@
 		{
 			"name": "setTodoCode",
 			"inputs": [
-				{"name":"code","type":"cell"}
+				{"name":"code","type":"cell"},
+				{"name":"data","type":"cell"}
 			],
 			"outputs": [
 			]
@@ -220,6 +221,30 @@
 			],
 			"outputs": [
 				{"components":[{"name":"identifier","type":"uint256"},{"name":"purchaseName","type":"bytes"},{"name":"number","type":"uint256"},{"name":"createTime","type":"uint256"},{"name":"bought","type":"bool"},{"name":"price","type":"uint256"}],"name":"purchaseList","type":"map(uint256,tuple)"}
+			]
+		},
+		{
+			"name": "m_todoCode",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"m_todoCode","type":"cell"}
+			]
+		},
+		{
+			"name": "m_todoData",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"m_todoData","type":"cell"}
+			]
+		},
+		{
+			"name": "m_todoStateInit",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"m_todoStateInit","type":"cell"}
 			]
 		}
 	],

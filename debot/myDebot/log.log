@@ -6,12 +6,12 @@ Input arguments:
 init_data: None
 is_update_tvc: None
 
-Seed phrase: "render expire mention second pigeon punch other motion spot suggest quarter mom"
-Raw address: 0:07609be11fc74070f576f895e6d571d1b94820ce2e85effed9a44ff1fb5ff1ae
+Seed phrase: "capital record holiday melt friend power inch panel endless clarify ankle cement"
+Raw address: 0:c2f2d44d757b6ffc5a9242ca32a48884db2efaf071f6649db7600239edf08e52
 testnet:
-Non-bounceable address (for init): 0QAHYJvhH8dAcPV2-JXm1XHRuUggzi6F7_7ZpE_x-1_xrlI8
-Bounceable address (for later access): kQAHYJvhH8dAcPV2-JXm1XHRuUggzi6F7_7ZpE_x-1_xrg_5
+Non-bounceable address (for init): 0QDC8tRNdXtv_FqSQsoypIiE2y768HH2ZJ23YAI57fCOUu7i
+Bounceable address (for later access): kQDC8tRNdXtv_FqSQsoypIiE2y768HH2ZJ23YAI57fCOUrMn
 mainnet:
-Non-bounceable address (for init): UQAHYJvhH8dAcPV2-JXm1XHRuUggzi6F7_7ZpE_x-1_xrum2
-Bounceable address (for later access): EQAHYJvhH8dAcPV2-JXm1XHRuUggzi6F7_7ZpE_x-1_xrrRz
+Non-bounceable address (for init): UQDC8tRNdXtv_FqSQsoypIiE2y768HH2ZJ23YAI57fCOUlVo
+Bounceable address (for later access): EQDC8tRNdXtv_FqSQsoypIiE2y768HH2ZJ23YAI57fCOUgit
 Succeeded
